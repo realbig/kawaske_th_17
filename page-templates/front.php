@@ -1,100 +1,101 @@
 <?php
-/*
-Template Name: Front
-*/
-get_header(); ?>
+/**
+ * Template Name: Front
+ *
+ * @global WP_Query $wp_query
+ */
+get_header();
 
-<header class="front-hero" role="banner">
-	<div class="marketing">
-		<div class="tagline">
-			<h1><?php bloginfo( 'name' ); ?></h1>
-			<h4 class="subheader"><?php bloginfo( 'description' ); ?></h4>
-			<a role="button" class="download large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Download FoundationPress</a>
-		</div>
+$ID = get_the_ID();
+?>
 
-		<div class="watch">
-			<span id="stargazers"><a href="https://github.com/olefredrik/foundationpress">1.5k stargazers</a></span>
-			<span id="twitter"><a href="https://twitter.com/olefredrik">@olefredrik</a></span>
-		</div>
-	</div>
+    <header class="front-hero" role="banner" <?php echo kwaske_get_featured_interchange( 25 ); ?>>
+        <div class="marketing">
+            <div class="tagline">
+                <h1><?php echo kwaske_field_helpers()->fields->get_field( 'hero_heading' ); ?></h1>
+                <h4 class="subheader"><?php echo kwaske_field_helpers()->fields->get_field( 'hero_subheading' ); ?></h4>
+                <a role="button" class="large button arrow-button"
+                   href="<?php echo get_permalink( kwaske_field_helpers()->fields->get_field( 'hero_button_link' ) ); ?>">
+					<?php echo kwaske_field_helpers()->fields->get_field( 'hero_button_text' ); ?>
+                </a>
+            </div>
+        </div>
 
-</header>
+    </header>
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-<section class="intro" role="main">
-	<div class="fp-intro">
+    <section class="intro" role="main">
+        <div class="fp-intro">
 
-		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
-			<div class="entry-content">
-				<?php the_content(); ?>
-			</div>
-			<footer>
-				<?php
-					wp_link_pages(
-						array(
-							'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
-							'after'  => '</p></nav>',
-						)
-					);
-				?>
-				<p><?php the_tags(); ?></p>
-			</footer>
-			<?php do_action( 'foundationpress_page_before_comments' ); ?>
-			<?php comments_template(); ?>
-			<?php do_action( 'foundationpress_page_after_comments' ); ?>
-		</div>
+            <div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
-	</div>
+                <h1 class="page-title">
+					<?php the_title(); ?>
+					<?php kwaske_banner_end(); ?>
+                </h1>
 
-</section>
-<?php endwhile;?>
+				<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+
+                <div class="intro-container">
+                    <div class="entry-content">
+						<?php the_content(); ?>
+                    </div>
+
+                    <di class="intro-video">
+						<?php echo wp_oembed_get( kwaske_field_helpers()->fields->get_field( 'home_youtube_url' ) ); ?>
+                    </di>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+<?php endwhile; ?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 
-<div class="section-divider">
-	<hr />
-</div>
+<?php
+// Get services
+$service_count = kwaske_field_helpers()->fields->get_field( 'home_services_count' );
 
+$wp_query->query( array(
+	'post_type'      => 'service',
+	'posts_per_page' => $service_count ? (int) $service_count : 12,
+) );
+?>
 
-<section class="benefits">
-	<header>
-		<h2>Build Foundation based sites, powered by WordPress</h2>
-		<h4>Foundation is the professional choice for designers, developers and teams. <br /> WordPress is by far, <a href="http://trends.builtwith.com/cms">the world's most popular CMS</a> (currently powering 38% of the web).</h4>
-	</header>
+    <section class="services">
+        <h2 class="banner-title">
+            Services We Offer
+			<?php kwaske_banner_end(); ?>
+        </h2>
 
-	<div class="semantic">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/demo/semantic.svg" alt="semantic">
-		<h3>Semantic</h3>
-		<p>Everything is semantic. You can have the cleanest markup without sacrificing the utility and speed of Foundation.</p>
-	</div>
+		<?php get_template_part( 'template-parts/services-list' ); ?>
+    </section>
 
-	<div class="responsive">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/demo/responsive.svg" alt="responsive">
-		<h3>Responsive</h3>
-		<p>You can build for small devices first. Then, as devices get larger and larger, layer in more complexity for a complete responsive design.</p>
+    <section class="request-quote">
 
-	</div>
+        <h2 class="banner-title">
+            Request a Quote
+			<?php kwaske_banner_end(); ?>
+        </h2>
 
-	<div class="customizable">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/demo/customizable.svg" alt="customizable">
-		<h3>Customizable</h3>
-		<p>You can customize your build to include or remove certain elements, as well as define the size of columns, colors, font size and more.</p>
+        <div class="request-quote-container">
+            <div class="request-quote-content">
+				<?php echo wpautop( kwaske_field_helpers()->fields->get_field( 'home_request_quote_content', $ID ) ); ?>
+            </div>
 
-	</div>
+            <div class="request-quote-form">
+				<?php
+				$form = kwaske_field_helpers()->fields->get_field( 'home_request_quote_form', $ID );
 
-	<div class="professional">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/demo/professional.svg" alt="professional">
-		<h3>Professional</h3>
-		<p>Millions of designers and developers depend on Foundation. We have business support, training and consulting to help grow your product or service.</p>
-	</div>
+				if ( $form ) {
 
-	<div class="why-foundation">
-		<a href="/kitchen-sink">See what's in Foundation out of the box →</a>
-	</div>
-
-</section>
-
-
+					Ninja_Forms()->display( $form );
+				}
+				?>
+            </div>
+        </div>
+    </section>
 
 <?php get_footer();

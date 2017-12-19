@@ -1,0 +1,40 @@
+.nf-field-container.arrow-button {
+  * {
+    display: inline !important;
+  }
+
+  input[type="button"] {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font-weight: bold;
+  }
+}
+
+.nf-field-container {
+  &.transparent {
+    visibility: hidden;
+    marign: 0;
+
+    &.hr-container {
+      hr {
+        margin: 0;
+        border: none;
+      }
+    }
+  }
+}
+
+.nf-form-fields-required {
+  display: none;
+}
+
+.nf-form-cont .nf-field-container.one-half {
+  @include breakpoint(small only) {
+    width: 100%;
+    margin-left: 0;
+  }
+}

@@ -28,9 +28,10 @@ function foundationpress_custom_sizes( $sizes ) {
 		'fp-small'  => __( 'FP Small' ),
 		'fp-medium' => __( 'FP Medium' ),
 		'fp-large'  => __( 'FP Large' ),
-		'fp-xlarge'  => __( 'FP XLarge' ),
+		'fp-xlarge' => __( 'FP XLarge' ),
 	) );
 }
+
 add_filter( 'image_size_names_choose', 'foundationpress_custom_sizes' );
 
 // Add custom image sizes attribute to enhance responsive image functionality for content images
@@ -56,13 +57,37 @@ function foundationpress_adjust_image_sizes_attr( $sizes, $size ) {
 
 	return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'foundationpress_adjust_image_sizes_attr', 10 , 2 );
+
+add_filter( 'wp_calculate_image_sizes', 'foundationpress_adjust_image_sizes_attr', 10, 2 );
 
 // Remove inline width and height attributes for post thumbnails
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-    if(!strpos($html, 'attachment-shop_single')) {
-        $html = preg_replace( '/^(width|height)=\"\d*\"\s/', '', $html );
-    }
-    return $html;
+	if ( ! strpos( $html, 'attachment-shop_single' ) ) {
+		$html = preg_replace( '/^(width|height)=\"\d*\"\s/', '', $html );
+	}
+
+	return $html;
 }
+
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+function kwaske_get_featured_interchange( $attachment_ID ) {
+
+	if ( ! $attachment_ID ) {
+
+		return '';
+	}
+
+	$images = array(
+		'featured-small'  => wp_get_attachment_url( $attachment_ID ),
+		'featured-medium' => wp_get_attachment_url( $attachment_ID ),
+		'featured-large'  => wp_get_attachment_url( $attachment_ID ),
+		'featured-xlarge' => wp_get_attachment_url( $attachment_ID ),
+	);
+
+	return "data-interchange=\"[{$images['featured-small']}, small], [{$images['featured-medium']}, medium], [{$images['featured-large']}, large], [{$images['featured-xlarge']}, xlarge]\"";
+}
+
+function kwaske_featured_interchange( $attachment_ID ) {
+	echo kwaske_get_featured_interchange( $attachment_ID );
+}

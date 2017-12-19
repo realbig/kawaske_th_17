@@ -1,0 +1,9 @@
+@mixin header-sizes($header) {
+  @each $breakpoint, $size in $breakpoints {
+    @if map-has-key($header-styles, $breakpoint){
+      @include breakpoint($breakpoint) {
+        font-size: rem-calc(map-get( map-get( map-get( $header-styles, $breakpoint), $header ), font-size));
+      }
+    }
+  }
+}

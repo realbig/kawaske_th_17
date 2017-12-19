@@ -1,0 +1,33 @@
+@mixin alt-title {
+  position: relative;
+  margin-bottom: calc(1rem + 15px);
+  font-weight: bold;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 80%;
+    height: 15px;
+    background: $off-blue;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 80%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 0 15px;
+    border-color: transparent transparent transparent $off-blue;
+  }
+}
+
+@mixin do-alt-title {
+  .alt-title {
+    @include alt-title;
+  }
+}

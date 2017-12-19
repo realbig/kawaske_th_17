@@ -21,8 +21,8 @@ function foundationpress_pagination() {
 		'total' => $wp_query->max_num_pages,
 		'mid_size' => 5,
 		'prev_next' => true,
-		'prev_text' => __( '&laquo;', 'foundationpress' ),
-		'next_text' => __( '&raquo;', 'foundationpress' ),
+		'prev_text' => __( '&laquo;', 'kwaske_th_17' ),
+		'next_text' => __( '&raquo;', 'kwaske_th_17' ),
 		'type' => 'list',
 	) );
 
@@ -48,13 +48,13 @@ if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
 function foundationpress_menu_fallback() {
 	echo '<div class="alert-box secondary">';
 	/* translators: %1$s: link to menus, %2$s: link to customize. */
-	printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
+	printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'kwaske_th_17' ),
 		/* translators: %s: menu url */
-		sprintf(  __( '<a href="%s">Menus</a>', 'foundationpress' ),
+		sprintf(  __( '<a href="%s">Menus</a>', 'kwaske_th_17' ),
 			get_admin_url( get_current_blog_id(), 'nav-menus.php' )
 		),
 		/* translators: %s: customize url */
-		sprintf(  __( '<a href="%s">Customize</a>', 'foundationpress' ),
+		sprintf(  __( '<a href="%s">Customize</a>', 'kwaske_th_17' ),
 			get_admin_url( get_current_blog_id(), 'customize.php' )
 		)
 	);

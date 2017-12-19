@@ -1,0 +1,111 @@
+@mixin services-list(
+  $item-class: 'service-list-item',
+  $inset: 15
+) {
+  @include xy-grid;
+  margin: 0;
+  list-style: none;
+
+  .#{$item-class} {
+    @include header-sizes(h1);
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    text-align: center;
+    font-weight: bold;
+    height: 200px;
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: 50%;
+      height: 200px;
+      margin-bottom: 1em;
+
+      &:hover {
+        .service-list-item-background {
+          transform: scale(1.05);
+          transition: transform 150ms;
+
+          &:before {
+            background: rgba(mix($secondary-color, $black, 45), 0.5);
+            transition: background 150ms;
+          }
+        }
+      }
+    }
+
+    .service-list-item-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      cursor: pointer;
+
+      @include breakpoint(medium) {
+        transition: transform 300ms;
+        width: calc(100% + 50px);
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(mix($secondary-color, $black, 45), 0.6);
+        transition: background 300ms;
+
+        @include breakpoint(medium) {
+          background: rgba(mix($secondary-color, $black, 30), 0.75);
+        }
+      }
+    }
+
+    @include breakpoint(medium) {
+      &:nth-child(4n - 3) {
+        .service-list-item-background {
+          clip-path: polygon(0 0, 0 100%, #{100 - $inset}% 100%, 100% 0);
+        }
+      }
+
+      &:nth-child(4n - 2) {
+        .service-list-item-background {
+          clip-path: polygon(#{$inset}% 0, 0 100%, 100% 100%, 100% 0);
+        }
+      }
+
+      &:nth-child(4n - 1) {
+        .service-list-item-background {
+          clip-path: polygon(0 0, 0 100%, 100% 100%, #{100 - $inset}% 0);
+        }
+      }
+
+      &:nth-child(4n) {
+        .service-list-item-background {
+          clip-path: polygon(0 0, #{$inset}% 100%, 100% 100%, 100% 0);
+        }
+      }
+    }
+
+    a {
+      position: absolute;
+      color: inherit;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      line-height: 200px;
+    }
+  }
+}
+
+@mixin do-services-list {
+  .services-list {
+    @include services-list;
+  }
+}

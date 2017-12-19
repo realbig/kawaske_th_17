@@ -1,0 +1,41 @@
+@mixin primary-link {
+  position: relative;
+  background: $off-blue;
+  color: $white;
+  padding-top: 0;
+  padding-bottom: 0;
+  white-space: initial;
+  line-height: 1.4;
+
+  @include breakpoint(medium) {
+    line-height: 30px;
+  }
+
+  &:hover {
+    background: darken($off-blue, 10%);
+
+    &:after {
+      border-color: transparent transparent transparent darken($off-blue, 10%);
+    }
+  }
+
+  @include breakpoint(medium) {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      bottom: 0;
+      height: 0;
+      width: 0;
+      border-style: solid;
+      border-width: 30px 0 0 30px;
+      border-color: transparent transparent transparent $off-blue;
+    }
+  }
+}
+
+@mixin do-primary-link {
+  .primary-link {
+    @include primary-link;
+  }
+}

@@ -1,8 +1,55 @@
-.sites-button {
-  background: $primary-color;
-  font-size: 1.25rem;
-  font-weight: bold;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-  border-radius: 3px;
+.button.secondary {
+  color: $white !important;
+}
+
+@mixin arrow-button {
+  position: relative;
   border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 44px;
+  padding-left: 1.5em;
+  margin-right: 22px;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: border-color 0.25s;
+    @include css-triangle(22px, $primary-color, right);
+  }
+
+  &.large {
+    line-height: 54px;
+    height: 54px;
+    margin-right: 22px;
+
+    &:after {
+      @include css-triangle(27px, $primary-color, right);
+    }
+  }
+
+  &:hover {
+    &:after {
+      border-color: transparent transparent transparent $button-background-hover;
+    }
+  }
+
+  &.secondary {
+    &:after {
+      border-color: transparent transparent transparent $secondary-color;
+    }
+
+    &:hover {
+      &:after {
+        border-color: transparent transparent transparent scale-color($secondary-color, $lightness: $button-background-hover-lightness);
+      }
+    }
+  }
+}
+
+@mixin do-arrow-button {
+  .arrow-button {
+    @include arrow-button;
+  }
 }

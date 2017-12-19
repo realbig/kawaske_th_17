@@ -22,13 +22,13 @@
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( '(Edit)', 'kwaske_th_17' ), '<span class="edit-link">', '</span>' ); ?>
 	</div>
 	<footer>
 		<?php
 			wp_link_pages(
 				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
+					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'kwaske_th_17' ),
 					'after'  => '</p></nav>',
 				)
 			);

@@ -22,7 +22,7 @@ class Foundationpress_Comments extends Walker_Comment {
 	 * start_lvl() only goes as high as 1 deep nested comments */
 	function __construct() { ?>
 
-		<h3><?php comments_number( __( 'No Responses to', 'foundationpress' ), __( 'One Response to', 'foundationpress' ), __( '% Responses to', 'foundationpress' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+		<h3><?php comments_number( __( 'No Responses to', 'kwaske_th_17' ), __( 'One Response to', 'kwaske_th_17' ), __( '% Responses to', 'kwaske_th_17' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 		<ol class="comment-list">
 
 	<?php }

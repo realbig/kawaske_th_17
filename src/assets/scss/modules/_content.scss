@@ -10,16 +10,24 @@
   &.sidebar-left {
 
     // Place the sidebar below main content on small screens ...
-      @include breakpoint(small) {
-        .main-content { order: 1; }
-        .sidebar { order: 2; }
+    @include breakpoint(small) {
+      .main-content {
+        order: 1;
       }
+      .sidebar {
+        order: 2;
+      }
+    }
 
     // ... and to the left on medium-up screens, when using the sidebar-left template
-      @include breakpoint(medium) {
-        .main-content { order: 2; }
-        .sidebar { order: 1; }
+    @include breakpoint(medium) {
+      .main-content {
+        order: 2;
       }
+      .sidebar {
+        order: 1;
+      }
+    }
   }
 
   // Full width template
@@ -34,12 +42,29 @@
     // Default template
     @include breakpoint(small) {
       @include xy-cell(12);
+
+      .entry-title {
+        margin-left: -#{map-get($grid-margin-gutters, small)};
+        padding-left: #{map-get($grid-margin-gutters, small)};
+      }
     }
 
     @include breakpoint(medium) {
       @include xy-cell(8);
+
+      .entry-title {
+        font-size: #{map-get(map-get(map-get($header-styles, small), h1), font-size)}px;
+        margin-left: -#{map-get($grid-margin-gutters, medium)};
+        padding-left: #{map-get($grid-margin-gutters, medium)};
+        max-width: 100%;
+      }
     }
 
+    @include breakpoint(large) {
+      .entry-title {
+        font-size: #{map-get(map-get(map-get($header-styles, medium), h1), font-size)}px;
+      }
+    }
   }
 
   .sidebar {
@@ -52,6 +77,5 @@
       @include xy-cell(4);
       margin-top: 1rem;
     }
-
   }
 }

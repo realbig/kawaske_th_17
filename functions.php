@@ -51,5 +51,37 @@ require_once( 'library/sticky-posts.php' );
 /** Configure responsive image sizes */
 require_once( 'library/responsive-images.php' );
 
+/** RBM Field Helpers support */
+require_once( 'library/rbm-field-helpers.php' );
+
+/** Admin functionality */
+require_once( 'library/admin/admin.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
+
+/** Shortcodes */
+require_once( 'library/shortcodes.php' );
+
+function kwaske_banner_end( $class_base = 'banner-end' ) {
+	?>
+    <span class="<?php echo esc_attr( $class_base ); ?>">
+        <span class="<?php echo esc_attr( $class_base ); ?>-a"></span>
+        <span class="<?php echo esc_attr( $class_base ); ?>-b"></span>
+        <span class="<?php echo esc_attr( $class_base ); ?>-c"></span>
+    </span>
+	<?php
+}
+
+add_filter( 'the_content', 'kwaske_shortcode_p_fix', 10 );
+function kwaske_shortcode_p_fix( $content ) {
+
+    // array of custom shortcodes requiring the fix
+	$block = join("|",array('accordion', 'accordion_item'));
+	// opening tag
+	$rep = preg_replace("/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/","[$2$3]",$content);
+
+	// closing tag
+	$rep = preg_replace("/(<p>)?\[\/($block)](<\/p>|<br \/>)?/","[/$2]",$rep);
+	return $rep;
+}

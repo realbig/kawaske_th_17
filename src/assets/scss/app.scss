@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-
+@import 'functions';
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
@@ -45,7 +45,7 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 @include foundation-visibility-classes;
-// @include foundation-float-classes;
+@include foundation-float-classes;
 @include foundation-flex-classes;
 
 // @include foundation-prototype-classes;
@@ -60,23 +60,37 @@
 
 // Global
 @import "global/_accessibility";
-@import "global/colors";
 @import "global/wp-admin";
 @import "global/wp-overrides";
 
+// Components
+@import "components/alt-title";
+@import "components/banner-end";
+@import "components/banner-title";
+@import "components/buttons";
+@import "components/featured-image";
+@import "components/links";
+@import "components/primary-link";
+@import "components/services-list";
+
 // Modules
+@import "modules/entry-meta";
 @import "modules/navigation";
+@import "modules/comments";
 @import "modules/content";
+@import "modules/sidebar";
 @import "modules/footer";
 @import "modules/editor-style";
-
-// Components
-@import "components/buttons";
-@import "components/cards";
-@import "components/featured-image";
-@import "components/dividers";
-@import "components/links";
+@import "modules/ninja-forms";
 
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";
+
+// Do Components
+@include do-banner-end;
+@include do-banner-title;
+@include do-arrow-button;
+@include do-alt-title;
+@include do-featured-hero;
+@include do-services-list;

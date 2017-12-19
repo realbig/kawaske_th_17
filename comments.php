@@ -23,7 +23,7 @@ if ( have_comments() ) :
 				'callback'          => null,
 				'end-callback'      => null,
 				'type'              => 'all',
-				'reply_text'        => __( 'Reply', 'foundationpress' ),
+				'reply_text'        => __( 'Reply', 'kwaske_th_17' ),
 				'page'              => '',
 				'per_page'          => '',
 				'avatar_size'       => 48,
@@ -32,7 +32,7 @@ if ( have_comments() ) :
 				'format'            => 'html5',
 				'short_ping'        => false,
 				'echo'              => true,
-				'moderation'        => __( 'Your comment is awaiting moderation.', 'foundationpress' ),
+				'moderation'        => __( 'Your comment is awaiting moderation.', 'kwaske_th_17' ),
 			)
 		);
 
@@ -51,7 +51,7 @@ endif;
 	Prevent access to this file directly
 	*/
 
-	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
+	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'kwaske_th_17' ) );
 
 	if ( post_password_required() ) { ?>
 	<section id="comments">
@@ -72,9 +72,9 @@ if ( comments_open() ) :
 	<h3>
 		<?php
 			comment_form_title(
-				__( 'Leave a Reply', 'foundationpress' ),
+				__( 'Leave a Reply', 'kwaske_th_17' ),
 				/* translators: %s: author of comment being replied to */
-				__( 'Leave a Reply to %s', 'foundationpress' )
+				__( 'Leave a Reply to %s', 'kwaske_th_17' )
 			);
 		?>
 	</h3>
@@ -100,7 +100,7 @@ if ( comments_open() ) :
 					get_option( 'siteurl' ),
 					$user_identity
 				);
-			?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a>
+			?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'kwaske_th_17' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a>
 		</p>
 		<?php else : ?>
 		<p>

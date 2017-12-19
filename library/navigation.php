@@ -8,8 +8,8 @@
  */
 
 register_nav_menus( array(
-	'top-bar-r'  => esc_html__( 'Right Top Bar', 'foundationpress' ),
-	'mobile-nav' => esc_html__( 'Mobile', 'foundationpress' ),
+	'top-bar-r'  => esc_html__( 'Right Top Bar', 'kwaske_th_17' ),
+	'mobile-nav' => esc_html__( 'Mobile', 'kwaske_th_17' ),
 ));
 
 
@@ -40,7 +40,7 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 	function foundationpress_mobile_nav() {
 		wp_nav_menu( array(
 			'container'      => false,                         // Remove nav container
-			'menu'           => __( 'mobile-nav', 'foundationpress' ),
+			'menu'           => __( 'mobile-nav', 'kwaske_th_17' ),
 			'menu_class'     => 'vertical menu',
 			'theme_location' => 'mobile-nav',
 			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',

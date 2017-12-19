@@ -1,0 +1,42 @@
+.sidebar {
+
+  .widget {
+    margin-bottom: 2rem;
+  }
+
+  .widget-title {
+    @include alt-title;
+    @include header-sizes(h4)
+  }
+
+  .menu {
+    .menu-item {
+      a {
+        @include primary-link;
+      }
+
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .nf-form-cont {
+    textarea, input, select {
+      background: none;
+      border: 2px solid $medium-gray;
+      color: $body-font-color;
+    }
+
+    select {
+      @include background-triangle($primary-color);
+      background-origin: content-box;
+      background-position: $global-right (-$form-spacing) center;
+      background-repeat: no-repeat;
+      background-size: 9px 6px;
+    }
+
+    .one-half {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}

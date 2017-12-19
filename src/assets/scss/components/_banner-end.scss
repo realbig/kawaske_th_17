@@ -1,0 +1,173 @@
+@mixin banner-end-angled(
+  $size: 86px,
+  $spacing: 25px,
+  $inner-class-base: 'banner-end-',
+  $position: 'right'
+) {
+  position: absolute;
+  overflow: hidden;
+  height: $size;
+  width: $size + ($spacing * 2);
+
+  @if $position == left {
+
+    left: 0;
+
+  } @else {
+
+    right: 0;
+  }
+
+  .#{$inner-class-base}a {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -$spacing;
+    border-style: solid;
+    z-index: 100;
+
+    @if $position == left {
+
+      border-width: ($size + ($spacing * 2)) ($size + ($spacing * 2)) 0 0;
+      border-color: $off-blue transparent transparent transparent;
+      left: $spacing;
+
+    } @else {
+
+      border-width: 0 ($size + ($spacing * 2)) ($size + ($spacing * 2)) 0;
+      border-color: transparent $off-blue transparent transparent;
+      right: $spacing;
+    }
+  }
+
+  .#{$inner-class-base}b {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -$spacing;
+    border-style: solid;
+    z-index: 100;
+
+    @if $position == left {
+
+      border-width: ($size + ($spacing * 2)) ($size + ($spacing * 2)) 0 0;
+      border-color: $light-gray transparent transparent transparent;
+      left: 0;
+
+    } @else {
+
+      border-width: 0 ($size + ($spacing * 2)) ($size + ($spacing * 2)) 0;
+      border-color: transparent $light-gray transparent transparent;
+      right: 0;
+    }
+  }
+
+  .#{$inner-class-base}c {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -$spacing;
+    border-style: solid;
+    z-index: 100;
+
+    @if $position == left {
+
+      border-width: ($size + ($spacing * 2)) ($size + ($spacing * 2)) 0 0;
+      border-color: $white transparent transparent transparent;
+      left: -$spacing;
+
+    } @else {
+
+      border-width: 0 ($size + ($spacing * 2)) ($size + ($spacing * 2)) 0;
+      border-color: transparent $white transparent transparent;
+      right: -$spacing;
+    }
+  }
+}
+
+@mixin banner-end-straight(
+  $size: 86px,
+  $spacing: 20px,
+  $inner-class-base: 'banner-end-',
+  $position: 'right'
+) {
+  position: absolute;
+  overflow: hidden;
+  height: $size;
+  width: $size + ($spacing * 2);
+
+  @if $position == left {
+
+    left: 0;
+
+  } @else {
+
+    right: 0;
+  }
+
+  .#{$inner-class-base}a {
+    position: absolute;
+    width: $spacing;
+    height: $size;
+    top: 0;
+    background: $off-blue;
+    z-index: 100;
+
+    @if $position == left {
+
+      left: ($spacing * 2);
+
+    } @else {
+
+      right: ($spacing * 2);
+    }
+  }
+
+  .#{$inner-class-base}b {
+    position: absolute;
+    width: $spacing;
+    height: $size;
+    top: 0;
+    background: $light-gray;
+    z-index: 100;
+
+    @if $position == left {
+
+      left: $spacing;
+
+    } @else {
+
+      right: $spacing;
+    }
+  }
+
+  .#{$inner-class-base}c {
+    position: absolute;
+    width: $spacing;
+    height: $size;
+    top: 0;
+    background: $white;
+    z-index: 100;
+
+    @if $position == left {
+
+      left: 0;
+
+    } @else {
+
+      right: 0;
+    }
+  }
+}
+
+@mixin do-banner-end {
+  .banner-end {
+    @include breakpoint(small only) {
+      @include banner-end-straight;
+    }
+
+    @include breakpoint(medium) {
+      @include banner-end-angled;
+    }
+  }
+}

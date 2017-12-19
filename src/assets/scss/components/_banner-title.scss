@@ -1,0 +1,27 @@
+@mixin banner-title {
+  @include header-sizes(h1);
+  position: relative;
+  background: $primary-color;
+  color: $white;
+  margin-bottom: 1.5rem;
+  padding-left: map-get($grid-margin-gutters, small) / 2;
+  line-height: 86px;
+  font-weight: bold;
+
+  @include breakpoint(small only) {
+    padding-right: 70px;
+  }
+
+  @include breakpoint(medium) {
+    width: 800px;
+    max-width: 80%;
+    padding-left: map-get($grid-margin-gutters, medium) / 2;
+    margin-bottom: 2rem;
+  }
+}
+
+@mixin do-banner-title {
+  .banner-title {
+    @include banner-title;
+  }
+}

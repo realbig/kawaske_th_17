@@ -1,4 +1,4 @@
-.featured-hero {
+@mixin feature-hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,5 +10,11 @@
 
   @include breakpoint(xlarge) {
     height: rem-calc(400);
+  }
+}
+
+@mixin do-featured-hero {
+  .featured-hero {
+    @include feature-hero;
   }
 }
