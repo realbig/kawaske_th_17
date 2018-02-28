@@ -7,7 +7,7 @@
   padding-left: map-get($grid-margin-gutters, small) / 2;
   line-height: 86px;
   font-weight: bold;
-  width: 90%;
+  width: 1000%;
 
   @include breakpoint(small only) {
     padding-right: 70px;
