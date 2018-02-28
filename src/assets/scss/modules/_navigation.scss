@@ -1,17 +1,17 @@
 // Navigation breakpoints
 .mobile-menu,
 .site-title-bar {
-  @include hide-for(medium);
+  @include hide-for(large);
   padding: 0;
   background: $white;
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     background: $topbar-background;
   }
 }
 
 .desktop-menu {
-  @include show-for(medium);
+  @include show-for(large);
 }
 
 .site-navigation {
@@ -19,18 +19,18 @@
     padding: 0; // prevents container visibility on small screens
   }
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     height: 86px;
   }
 }
 
 .site-navigation .top-bar-left {
-  @include show-for(medium);
+  @include show-for(large);
   display: flex;
   align-items: center;
   background: $white;
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     width: 40%;
     height: 100%;
   }
@@ -41,11 +41,11 @@
 }
 
 .site-navigation .top-bar-right {
-  @include show-for(medium);
+  @include show-for(large);
   position: relative;
   background: $white;
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     width: 60%;
     height: 100%;
   }
@@ -114,69 +114,63 @@
 }
 
 .title-bar-left {
-  @include breakpoint(small only) {
-    position: relative;
-    height: 55px;
-  }
+  position: relative;
+  height: 55px;
 
   .menu-button {
-    @include breakpoint(small only) {
-      display: block;
+    display: block;
+    position: absolute;
+    background: $primary-color;
+    height: 100%;
+    width: 20%;
+    top: 0;
+    right: 0;
+
+    &:before {
+      content: '';
       position: absolute;
-      background: $primary-color;
-      height: 100%;
-      width: 20%;
       top: 0;
-      right: 0;
+      right: 100%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 55px 25px;
+      border-color: transparent transparent $primary-color transparent;
+    }
 
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 100%;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 0 55px 25px;
-        border-color: transparent transparent $primary-color transparent;
-      }
+    .menu-icon {
+      position: relative;
+      top: calc(50% - 15px);
+      left: calc(50% - 18px);
+      margin: 0;
 
-      .menu-icon {
-        position: relative;
-        top: calc(50% - 15px);
-        left: calc(50% - 18px);
-        margin: 0;
-
-        @include hamburger(
-          $color: $white,
-          $color-hover: darken($white, 10%),
-          $width: 36px,
-          $height: 30px,
-          $weight: 6px,
-          $bars: 3
-        );
-      }
+      @include hamburger(
+              $color: $white,
+              $color-hover: darken($white, 10%),
+              $width: 36px,
+              $height: 30px,
+              $weight: 6px,
+              $bars: 3
+      );
     }
   }
 
   .custom-logo-link {
-    @include breakpoint(small only) {
-      position: absolute;
-      height: calc(100% - 10px);
-      width: calc(80% - 10px);
-      top: 5px;
-      left: 5px;
+    position: absolute;
+    height: calc(100% - 10px);
+    width: calc(80% - 10px);
+    top: 5px;
+    left: 5px;
 
-      img {
-        height: 100%;
-        width: auto;
-        max-width: 100%;
-      }
+    img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
     }
   }
 }
 
-// Tablet and desktop menu
+// Desktop menu
 
 .top-bar {
 
@@ -224,7 +218,7 @@
       font-size: 1rem;
       line-height: 1;
 
-      @include breakpoint(medium) {
+      @include breakpoint(large) {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
