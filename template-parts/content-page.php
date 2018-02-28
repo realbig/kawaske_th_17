@@ -10,12 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
-		<h1 class="entry-title banner-title">
-            <?php the_title(); ?>
-            <?php kwaske_banner_end(); ?>
-        </h1>
-	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php edit_post_link( __( '(Edit)', 'kwaske_th_17' ), '<span class="edit-link">', '</span>' ); ?>

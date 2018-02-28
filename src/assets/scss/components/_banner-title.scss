@@ -7,14 +7,13 @@
   padding-left: map-get($grid-margin-gutters, small) / 2;
   line-height: 86px;
   font-weight: bold;
+  width: 90%;
 
   @include breakpoint(small only) {
     padding-right: 70px;
   }
 
   @include breakpoint(medium) {
-    width: 800px;
-    max-width: 80%;
     padding-left: map-get($grid-margin-gutters, medium) / 2;
     margin-bottom: 2rem;
   }
