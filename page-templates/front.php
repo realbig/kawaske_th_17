@@ -9,7 +9,7 @@ get_header();
 $ID = get_the_ID();
 ?>
 
-    <header class="front-hero" role="banner" <?php echo kwaske_get_featured_interchange( 25 ); ?>>
+    <header class="front-hero" role="banner" <?php echo kwaske_get_featured_interchange( get_post_thumbnail_id() ); ?>>
         <div class="marketing">
             <div class="tagline">
                 <h1><?php echo kwaske_field_helpers()->fields->get_field( 'hero_heading' ); ?></h1>
