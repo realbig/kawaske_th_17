@@ -54,6 +54,9 @@ require_once( 'library/responsive-images.php' );
 /** RBM Field Helpers support */
 require_once( 'library/rbm-field-helpers.php' );
 
+/** Gallery support */
+require_once( 'library/gallery.php' );
+
 /** Admin functionality */
 require_once( 'library/admin/admin.php' );
 

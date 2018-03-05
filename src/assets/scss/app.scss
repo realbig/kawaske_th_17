@@ -74,14 +74,15 @@
 @import "components/services-list";
 
 // Modules
-@import "modules/entry-meta";
-@import "modules/navigation";
 @import "modules/comments";
 @import "modules/content";
-@import "modules/sidebar";
-@import "modules/footer";
 @import "modules/editor-style";
+@import "modules/entry-meta";
+@import "modules/footer";
+@import "modules/gallery";
+@import "modules/navigation";
 @import "modules/ninja-forms";
+@import "modules/sidebar";
 
 // Templates
 @import "templates/front";
