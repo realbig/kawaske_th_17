@@ -5,6 +5,7 @@
   @include xy-grid;
   margin: 0;
   list-style: none;
+  overflow: hidden;
 
   .#{$item-class} {
     @include header-sizes(h1);
