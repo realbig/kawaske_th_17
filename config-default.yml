@@ -1,7 +1,7 @@
 # Browsersync config
 BROWSERSYNC:
   # URL of local development server goes here (ex. http://localsite.dev)
-  url: ""
+  url: "http://local.wordpress.test"
 
 # Autoprefixer will make sure your CSS works with these browsers
 COMPATIBILITY:
@@ -21,9 +21,12 @@ PATHS:
   sass:
     - "node_modules/foundation-sites/scss"
     - "node_modules/motion-ui/src"
-  # Paths to JavaScript entry points for webpack to bundle modules
+  # Paths to SCSS and JavaScript entry points
   entries:
-    - "src/assets/js/app.js"
+    scss: 
+      - "src/assets/scss/app.scss"
+    js: 
+      - "src/assets/js/app.js"
 
 # Set to true if you want static asset revisioning, helpful for cache busting
 REVISIONING: false    
