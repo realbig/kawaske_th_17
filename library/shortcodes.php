@@ -8,6 +8,7 @@
 defined( 'ABSPATH' ) || die();
 
 require_once( 'shortcodes/accordion.php' );
+require_once( 'shortcodes/form-overlay.php' );
 
 add_action( 'init', 'kwaske_shortcodes' );
 
@@ -20,4 +21,5 @@ add_action( 'init', 'kwaske_shortcodes' );
 function kwaske_shortcodes() {
 
 	add_shortcode( 'accordion', 'kwaske_sc_accordion' );
+	add_shortcode( 'form_overlay', 'kwaske_sc_form_overlay' );
 }

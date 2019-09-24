@@ -65,6 +65,8 @@ require_once( 'library/admin/admin.php' );
 
 /** Shortcodes */
 require_once( 'library/shortcodes.php' );
+require_once( 'library/admin/tinymce/localization.php' );
+require_once( 'library/admin/tinymce/form-overlay.php' );
 
 function kwaske_banner_end( $class_base = 'banner-end' ) {
 	?>
