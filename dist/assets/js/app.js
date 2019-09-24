@@ -12438,7 +12438,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Initializes galleries.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function galleryInit() {
 

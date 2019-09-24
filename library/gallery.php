@@ -2,7 +2,7 @@
 /**
  * Gallery modifications.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 
 defined( 'ABSPATH' ) || die();
@@ -13,7 +13,7 @@ add_action( 'wp_footer', 'kwaske_gallery_modals_output' );
 /**
  * Modifies the HTML output for WordPress galleries.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  *
  * @param string $output The gallery output. Default empty.
@@ -51,7 +51,7 @@ function kwaske_gallery_html( $output, $attr, $instance ) {
 /**
  * Outputs modals for any galleries.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_gallery_modals_output() {

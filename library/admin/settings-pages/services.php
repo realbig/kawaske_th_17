@@ -2,7 +2,7 @@
 /**
  * Services Settings page.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 
 defined( 'ABSPATH' ) || die();
@@ -56,7 +56,7 @@ function kwaske_services_settings_register() {
 /**
  * Adds the menu page for Services.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_services_add_menu_page() {
@@ -81,7 +81,7 @@ function kwaske_services_settings_page_actions() {
 /**
  * Services Settings page output.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_services_settings_page() {

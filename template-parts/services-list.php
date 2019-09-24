@@ -2,7 +2,7 @@
 /**
  * Outputs a list of services.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 
 defined( 'ABSPATH' ) || die();

@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || die();
 /**
  * Gets the Napleon Bee Supply RBM Field Helpers instance.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function kwaske_field_helpers() {
 
@@ -33,7 +33,7 @@ kwaske_field_helpers();
 /**
  * Outputs a select field.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @param array $args
  */

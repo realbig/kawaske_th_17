@@ -2,7 +2,7 @@
 /**
  * Shortcodes.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 
 defined( 'ABSPATH' ) || die();
@@ -14,7 +14,7 @@ add_action( 'init', 'kwaske_shortcodes' );
 /**
  * Adds shortcodes.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_shortcodes() {

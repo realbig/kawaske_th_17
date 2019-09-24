@@ -15,7 +15,7 @@ $(function () {
 /**
  * Initializes galleries.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function galleryInit() {
 

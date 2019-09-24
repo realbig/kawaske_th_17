@@ -2,7 +2,7 @@
 /**
  * Shortcode: Accordion
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 
 defined( 'ABSPATH' ) || die();
@@ -13,7 +13,7 @@ add_shortcode( 'accordion_item', 'kwaske_sc_accordion_item' );
 /**
  * Shortcode: Accordion
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function kwaske_sc_accordion( $atts = array(), $content = '' ) {
 
@@ -23,7 +23,7 @@ function kwaske_sc_accordion( $atts = array(), $content = '' ) {
 /**
  * Shortcode: Accordion Item
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function kwaske_sc_accordion_item( $atts = array(), $content = '' ) {
 

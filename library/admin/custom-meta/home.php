@@ -2,7 +2,7 @@
 /**
  * Adds extra meta to home page.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 
 defined( 'ABSPATH' ) || die();
@@ -12,7 +12,7 @@ add_action( 'add_meta_boxes', 'kwaske_add_mb_home' );
 /**
  * Adds meta boxes for products.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_add_mb_home() {
@@ -60,7 +60,7 @@ function kwaske_add_mb_home() {
 /**
  * Outputs the meta box for home page hero settings.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_mb_home_hero() {
@@ -111,7 +111,7 @@ function kwaske_mb_home_hero() {
 /**
  * Outputs the meta box for home page about settings.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_mb_home_about() {
@@ -128,7 +128,7 @@ function kwaske_mb_home_about() {
 /**
  * Outputs the meta box for home page services settings.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_mb_home_services() {
@@ -147,7 +147,7 @@ function kwaske_mb_home_services() {
 /**
  * Outputs the meta box for home page request quote settings.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function kwaske_mb_home_request_quote() {

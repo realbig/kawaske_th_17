@@ -2,7 +2,7 @@
 /**
  * Loads admin assets.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 
 defined( 'ABSPATH' ) || die();
