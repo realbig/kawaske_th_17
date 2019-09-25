@@ -1,0 +1,51 @@
+.video-with-form-overlay {
+    
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .overlay {
+        display: none;
+    }
+
+    &.ended {
+
+        .overlay {
+
+            display: inline-block;
+            position: absolute; 
+            top: 0; 
+            right: 0; 
+            bottom: .35rem;
+            left: 0;
+
+            &:before {
+                content: ""; 
+                position: absolute; 
+                top: 0; 
+                right: 0; 
+                bottom: 0; 
+                left: 0;
+                background-color: #000;
+                background-color: rgba( 0, 0, 0, 0.3 );
+                background-repeat: no-repeat; 
+                background-position: center;
+            }
+
+            .overlaid-items {
+
+                position: relative;
+
+                top: 50%;
+                transform: translateY( -50% );
+
+                text-align: center;
+
+            }
+
+        }
+
+    }
+
+}

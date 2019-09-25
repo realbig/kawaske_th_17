@@ -10,5 +10,7 @@ import Foundation from 'foundation-sites';
 //import './lib/foundation-explicit-pieces';
 
 import './lib/demosite';
+import './lib/fluid-youtube';
+import './lib/video-with-form-overlay';
 
 $(document).foundation();
