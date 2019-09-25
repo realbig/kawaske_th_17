@@ -13,7 +13,11 @@ defined( 'ABSPATH' ) || die();
 function kwaske_field_helpers() {
 
 	if ( ! class_exists( 'RBM_FieldHelpers' ) ) {
+
+		error_log( 'RBM Field Helpers is required. https://github.com/realbig/rbm-field-helpers-wrapper' );
+
 		return false;
+
 	}
 
 	static $field_helpers;
