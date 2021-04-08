@@ -14,6 +14,15 @@
  * @since FoundationPress 1.0.0
  */
 
+/**
+ * Define Constants based on our Stylesheet Header. Update things only once!
+ */
+$theme_header = wp_get_theme();
+
+define( 'THEME_VER', $theme_header->get( 'Version' ) );
+define( 'THEME_URL', get_template_directory_uri() );
+define( 'THEME_DIR', get_template_directory() );
+
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
 
