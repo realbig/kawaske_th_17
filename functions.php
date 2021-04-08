@@ -91,3 +91,23 @@ function kwaske_shortcode_p_fix( $content ) {
 	$rep = preg_replace("/(<p>)?\[\/($block)](<\/p>|<br \/>)?/","[/$2]",$rep);
 	return $rep;
 }
+
+/**
+ * Defers parsing of JS
+ * @since {{VERSION}}
+ */
+
+add_filter( 'script_loader_tag', 'kwaske_defer_js', 10, 3 );
+function kwaske_defer_js( $tag, $handle, $src ) {
+
+	if ( is_admin() ) return $tag;
+
+	if ( $handle == 'jquery' ) return $tag;
+
+	// Ensures stuff like `wp` is available
+	// Also contains a fix for WooCommerce Square
+	if ( strpos( $src, 'wp-includes' ) !== false || strpos( $src, 'woocommerce-square' ) !== false ) return $tag;
+
+	$tag = str_replace( 'src', 'defer="defer" src', $tag );
+    return $tag;
+}
