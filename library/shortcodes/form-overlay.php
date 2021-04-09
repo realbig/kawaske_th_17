@@ -2,7 +2,7 @@
 /**
  * Shortcode: Form Overlay
  *
- * @since {{VERSION}}
+ * @since 1.0.1
  */
 
 defined( 'ABSPATH' ) || die();
@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || die();
 /**
  * Add Form Overlay Shortcode
  *
- * @since       {{VERSION}}
+ * @since       1.0.1
  * @return      HTML
  */
 add_shortcode( 'form_overlay', 'kwaske_sc_form_overlay' );

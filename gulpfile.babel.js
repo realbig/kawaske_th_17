@@ -252,18 +252,22 @@ function version() {
   
     return gulp.src([
         'admin/**/*',
-        'assets/src/**/*',
+        'src/**/*',
+        '!src/assets/images/**/*',
         'core/**/*',
         'vendor/**/*',
         'languages/**/*',
         'templates/**/*',
         'style.css',
-        'readme.txt'
+        'readme.txt',
+        'library/**/*',
+        'template-parts/**/*',
+        '*.php'
     ], { base: './', allowEmpty: true } )
     // Doc block versions, only update on non-Betas and 1.0.0+ releases
         .pipe( $.if( ( pkg.version.indexOf( 'b' ) == -1 && compareVersions( pkg.version, '1.0.0' ) !== -1 ), $.replace( /\{\{VERSION}}/g, pkg.version ) ) )
         // Theme header
-        .pipe($.replace(/(\* Version: ).*/, "$1" + pkg.version))
+        .pipe($.replace(/([\*\s*]?Version: ).*/, "$1" + pkg.version))
         // readme.txt
     .pipe( $.replace( /(Stable tag: ).*/, function( match, captureGroup, offset, file ) {
       return captureGroup + pkg.version; // This really shouldn't be necessary, but it wouldn't work otherwise
