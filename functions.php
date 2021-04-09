@@ -103,7 +103,7 @@ function kwaske_shortcode_p_fix( $content ) {
 
 /**
  * Defers parsing of JS
- * @since {{VERSION}}
+ * @since 1.0.2
  */
 
 add_filter( 'script_loader_tag', 'kwaske_defer_js', 10, 3 );
