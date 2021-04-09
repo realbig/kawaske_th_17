@@ -5,7 +5,7 @@
      * 
      * @param       {object} choices Choices Object from our Localized JSON
      *                               
-     * @since       {{VERSION}}
+     * @since       1.0.1
      * @returns     {Array}  Array of TinyMCE Listbox Choices
      */
     function kwaske_generate_tinymce_listbox( choices ) {

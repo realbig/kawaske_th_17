@@ -2,7 +2,7 @@
 /**
  * Localize TinyMCE Plugins
  *
- * @since   {{VERSION}}
+ * @since   1.0.0
  * @package kwaske_th_17
  * @subpackage  kwaske_th_17/admin/tinymce
  */
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * wp_localize_script() doesn't work on non-enqueued scripts like TinyMCE Plugins
  * So we're going to fake it!
  *
- * @since       {{VERSION}}
+ * @since       1.0.0
  * @return      void
  */
 add_action( 'before_wp_tiny_mce', 'kwaske_localize_tinymce' );

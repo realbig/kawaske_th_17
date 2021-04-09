@@ -42,9 +42,9 @@ $ID = get_the_ID();
 						<?php the_content(); ?>
                     </div>
 
-                    <di class="intro-video">
+                    <div class="intro-video">
 						<?php echo wp_oembed_get( kwaske_field_helpers()->fields->get_field( 'home_youtube_url' ) ); ?>
-                    </di>
+                    </div>
                 </div>
             </div>
 

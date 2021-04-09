@@ -2,7 +2,7 @@
 /**
  * Add a TinyMCE button to create [video_with_form_overlay] Shortcodes
  *
- * @since   {{VERSION}}
+ * @since   1.0.0
  * @package kwaske_th_17
  * @subpackage  kwaske_th_17/admin/tinymce
  */
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Add Button Shortcode to TinyMCE
  *
- * @since       {{VERSION}}
+ * @since       1.0.0
  * @return      void
  */
 add_action( 'admin_init', 'add_kwaske_video_with_form_overlay_tinymce_filters' );
@@ -41,7 +41,7 @@ function add_kwaske_video_with_form_overlay_tinymce_filters() {
 /**
  * Add Localized Text for our TinyMCE Button
  *
- * @since       {{VERSION}}
+ * @since       1.0.0
  * @return      Array Localized Text
  */
 add_filter( 'kwaske_tinymce_l10n', 'kwaske_video_with_form_overlay_tinymce_l10n' );

@@ -2,7 +2,7 @@
 /**
  * Shortcode: Video With Form Overlay
  *
- * @since {{VERSION}}
+ * @since 1.0.1
  */
 
 defined( 'ABSPATH' ) || die();
@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || die();
 /**
  * Add Video With Form Overlay Shortcode
  *
- * @since       {{VERSION}}
+ * @since       1.0.1
  * @return      HTML
  */
 add_shortcode( 'video_with_form_overlay', 'kwaske_sc_video_with_form_overlay' );
@@ -90,7 +90,7 @@ function kwaske_sc_video_with_form_overlay( $atts, $content = '' ) {
  * @param object $data Data Object returned from oEmbed provider
  * @param string $url URL String
  * 
- * @since {{VERSION}}
+ * @since 1.0.1
  * @return void
  */
 add_filter( 'oembed_dataparse', function( $return, $data, $url ) {
