@@ -79,10 +79,10 @@ function kwaske_get_featured_interchange( $attachment_ID ) {
 	}
 
 	$images = array(
-		'featured-small'  => wp_get_attachment_url( $attachment_ID ),
-		'featured-medium' => wp_get_attachment_url( $attachment_ID ),
-		'featured-large'  => wp_get_attachment_url( $attachment_ID ),
-		'featured-xlarge' => wp_get_attachment_url( $attachment_ID ),
+		'featured-small'  => wp_get_attachment_image_src( $attachment_ID, 'fp-small' )[0],
+		'featured-medium' => wp_get_attachment_image_src( $attachment_ID, 'fp-medium' )[0],
+		'featured-large'  => wp_get_attachment_image_src( $attachment_ID, 'fp-large' )[0],
+		'featured-xlarge' => wp_get_attachment_image_src( $attachment_ID, 'fp-xlarge' )[0],
 	);
 
 	return "data-interchange=\"[{$images['featured-small']}, small], [{$images['featured-medium']}, medium], [{$images['featured-large']}, large], [{$images['featured-xlarge']}, xlarge]\"";

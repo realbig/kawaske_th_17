@@ -126,10 +126,20 @@ function foundationpress_responsive_video_oembed_html( $html, $url, $attr, $post
 	// Process video embed
 	if ( true == $is_video ) {
 
-		// Find the `<iframe>`
+		// Create new DOMDocument
 		$doc = new DOMDocument();
+
+		// Set error level
+		$internalErrors = libxml_use_internal_errors(true);
+
+		// load HTML
 		$doc->loadHTML( $html );
+
+		// Find the `<iframe>`
 		$tags = $doc->getElementsByTagName( 'iframe' );
+
+		// Restore error level
+		libxml_use_internal_errors($internalErrors);
 
 		// Get width and height attributes
 		foreach ( $tags as $tag ) {
