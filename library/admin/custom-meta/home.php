@@ -118,7 +118,7 @@ function kwaske_mb_home_about() {
 
 	kwaske_field_helpers()->fields->do_field_text( 'home_youtube_url', array(
 		'group'       => 'home_about',
-		'label'       => 'About Section YouTube URL',
+		'label'       => 'About Section YouTube ID',
 		'input_class' => 'regular-text',
 	) );
 

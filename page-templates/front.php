@@ -42,9 +42,15 @@ $ID = get_the_ID();
 						<?php the_content(); ?>
                     </div>
 
-                    <di class="intro-video">
-						<?php echo wp_oembed_get( kwaske_field_helpers()->fields->get_field( 'home_youtube_url' ) ); ?>
-                    </di>
+                    <div class="intro-video">
+						<?php
+                        $home_youtube_url = kwaske_field_helpers()->fields->get_field( 'home_youtube_url' );
+
+                        //Using do_shortcode because wp_oembed_get isn't working with Lyte for some reason
+                        echo do_shortcode( '[lyte id="' . $home_youtube_url . '"]' );
+                        //echo wp_oembed_get( $home_youtube_url ) );
+                        ?>
+                    </div>
                 </div>
             </div>
 
